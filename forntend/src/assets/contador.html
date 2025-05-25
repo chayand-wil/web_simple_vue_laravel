@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ 
+</head>
+<body>
+
+    <label for="" value="1" id="label"> 1</label>
+    <br>
+    <button onclick="sumar()" id="button">Sumarrr</button>
+    
+
+<script>
+    var suma = 0; 
+    const label = document.getElementById("label");
+    const boton = document.getElementById("button");
+
+
+    function sumar(){
+        suma = suma + 1;
+        label.innerText = ">>: " + suma;
+    }
+
+
+</script>
+
+</body>
+</html>
