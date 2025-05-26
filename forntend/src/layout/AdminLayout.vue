@@ -1,4 +1,4 @@
-mira tengo eso: <template>
+<template>
   <div class="layout">
     <AppHeader />
     <div class="main">
@@ -16,49 +16,28 @@ import AppHeader from '../components/AppHeader.vue'
 </script>
 
 <style scoped>
- 
-
-
 .layout {
-  height: 100vh;
-  width: 100vw;
   display: flex;
   flex-direction: column;
-  margin: 0;
-  padding: 0;
+  height: 100vh;
+  width: 100%; /* no uses 100vw */
+  overflow: hidden;
 }
 
 .main {
   display: flex;
   flex: 1;
+  width: 100%;
   overflow: hidden;
-  margin: 0;
-  padding: 0;
+  min-width: 0;
 }
 
 .content {
-  position: relative;
-  z-index: 1;
   flex: 1;
   overflow-y: auto;
-  padding: 2rem;
+ padding: 1rem; /* o incluso 0 si quieres que todo se pegue al borde */
+ width: 100%;
+ height: 100%;
 }
-
-.content::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background-image: url('@/assets/background.png');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-
-  filter: blur(1px); /* <- Aplica el desenfoque */
-  z-index: -1; /* Para que quede detrás del contenido */
-}
-
-
-
-
 
 </style>
