@@ -12,7 +12,7 @@
 
 <script setup>
 import AppHeader from '../components/AppHeader.vue'
-// import AppSidebar from '../components/AppSidebar.vue'
+import AppSidebar from '../components/AppSidebar.vue'
 </script>
 
 <style scoped>
@@ -38,6 +38,9 @@ import AppHeader from '../components/AppHeader.vue'
  padding: 1rem; /* o incluso 0 si quieres que todo se pegue al borde */
  width: 100%;
  height: 100%;
+
+
+
 }
 
 </style>

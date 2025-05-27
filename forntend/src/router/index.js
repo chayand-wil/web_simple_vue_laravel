@@ -4,6 +4,7 @@ import LoginView from '../views/LoginView.vue'
 import AdminLayout from '../layout/AdminLayout.vue'
 import AdminView from '../views/AdminView.vue'
 import AyudanteView from '../views/AyudanteView.vue'
+import RandomView from '../views/RandomView.vue'
 // Puedes agregar más vistas luego, como UsuariosView, etc.
 
 const routes = [
@@ -18,10 +19,12 @@ const routes = [
 {
   path: '/admin',
   component: AdminLayout,
+  
   children: [
     { path: '', name: 'admin', component: AdminView },
     { path: 'usuarios', name: 'usuarios', component: AdminView },
     { path: 'reportes', name: 'reportes', component: AdminView },
+    { path: 'rand', name: 'random', component: RandomView },
   ]
 },
 
