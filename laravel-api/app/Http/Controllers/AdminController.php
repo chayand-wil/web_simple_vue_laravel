@@ -32,4 +32,17 @@ public function index()
     return User::select('id', 'name', 'email', 'role', 'created_at')->get();
 }
 
+public function uniqueUser( $id)
+{
+    
+    $user = User::find($id);
+    
+    if (!$user) {
+        return response()->json(['message' => 'Usuario no encontrado'], 404);
+    }
+
+    return $user;
+}
+ 
+
 }

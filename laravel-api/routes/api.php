@@ -9,11 +9,13 @@ use App\Http\Controllers\AdminController;
 
 Route::post('/login', [AuthController::class, 'login']);
 
+
+
 Route::middleware(['auth:api'])->group(function () {
     Route::get('/me', [AuthController::class, 'me']);
     Route::post('/logout', [AuthController::class, 'logout']);
-
-
+    
+     
 
     Route::middleware(RoleMiddleware::class . ':admin')->group(function () {
         Route::get('/admin-data', function () {
@@ -21,6 +23,7 @@ Route::middleware(['auth:api'])->group(function () {
         });
         Route::post('/users', [AdminController::class, 'store']);
         Route::get('/users', [AdminController::class, 'index']);   
+        Route::get('/uniqueuser/{id}', [AdminController::class, 'uniqueUser']);   
 
     });
 
@@ -31,6 +34,8 @@ Route::middleware(['auth:api'])->group(function () {
             return response()->json(['data' => 'Solo ayudante puede ver esto']);
         });
     });
+
+
 });
 
 
